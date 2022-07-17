@@ -1,18 +1,15 @@
 import React from 'react';
 
-import { v4 } from 'uuid';
-
-const key = v4();
-
 interface TaskProps {
-    task: string
+    key: string;
+    task: string;
 }
 
-const Task: React.FC<TaskProps> = ({ task }) => {
+const Task: React.FC<TaskProps> = ({ key, task }) => {
     const [complete, setComplete] = React.useState<boolean>(false);
 
     function toggleComplete() {
-        setComplete(!complete)
+        setComplete(!complete);
     }
 
     return (
