@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Task from './Task'
+
 const App: React.FC = () => {
   const [tasks, setTasks] = React.useState<string[]>([])
 
@@ -15,7 +17,9 @@ const App: React.FC = () => {
       <button onClick={handleAdd}>Add</button>
       <ul>
         {
-          tasks.map(task => <li key={task}>{task}</li>)
+          tasks.map(task => 
+            <Task task={task}></Task>
+          )
         }
       </ul>
     </div>
